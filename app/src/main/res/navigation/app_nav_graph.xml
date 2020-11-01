@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/scanCodeFragment"
+        android:name="com.ahmedabdelmohsen.whereitmade.destinations.ScanCodeFragment"
+        android:label="fragment_scan_code"
+        tools:layout="@layout/fragment_scan_code">
+        <action
+            android:id="@+id/action_scanCodeFragment_to_scanResultFragment"
+            app:destination="@id/scanResultFragment" />
+        <action
+            android:id="@+id/action_scanCodeFragment_to_scanNowFragment"
+            app:destination="@id/scanNowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanResultFragment"
+        android:name="com.ahmedabdelmohsen.whereitmade.destinations.ScanResultFragment"
+        android:label="fragment_scan_result"
+        tools:layout="@layout/fragment_scan_result" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.ahmedabdelmohsen.whereitmade.destinations.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_scanCodeFragment"
+            app:destination="@id/scanCodeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanNowFragment"
+        android:name="com.ahmedabdelmohsen.whereitmade.destinations.ScanNowFragment"
+        android:label="fragment_scan_now"
+        tools:layout="@layout/fragment_scan_now" >
+        <action
+            android:id="@+id/action_scanNowFragment_to_scanCodeFragment"
+            app:destination="@id/scanCodeFragment" />
+    </fragment>
+</navigation>

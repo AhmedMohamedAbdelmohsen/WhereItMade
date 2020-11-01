@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Where it made ?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="where_it_made">Where it made ?</string>
+    <string name="access_to_the_camera">access to the camera is needed for detection.</string>
+    <string name="scan_barcode">Scan Barcode</string>
+</resources>
