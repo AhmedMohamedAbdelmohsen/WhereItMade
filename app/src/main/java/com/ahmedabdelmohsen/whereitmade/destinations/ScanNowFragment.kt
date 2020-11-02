@@ -31,12 +31,6 @@ class ScanNowFragment : Fragment() {
         btn_start_scan.setOnClickListener {
             view.findNavController()
                 .navigate(ScanNowFragmentDirections.actionScanNowFragmentToScanCodeFragment())
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                arrayOf(Manifest.permission.CAMERA),
-                1
-            )
-
         }
     }
 }

@@ -13,7 +13,8 @@ class MainActivity : AppCompatActivity() {
         hideStatusBar()
     }
 
-    fun hideStatusBar() {
+    //hide statusBar
+    private fun hideStatusBar() {
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN

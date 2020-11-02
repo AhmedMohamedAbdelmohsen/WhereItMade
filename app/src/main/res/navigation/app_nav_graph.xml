@@ -21,7 +21,12 @@
         android:id="@+id/scanResultFragment"
         android:name="com.ahmedabdelmohsen.whereitmade.destinations.ScanResultFragment"
         android:label="fragment_scan_result"
-        tools:layout="@layout/fragment_scan_result" />
+        tools:layout="@layout/fragment_scan_result" >
+        <argument
+            android:name="barecode"
+            app:argType="string"
+            android:defaultValue="default" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.ahmedabdelmohsen.whereitmade.destinations.SplashFragment"

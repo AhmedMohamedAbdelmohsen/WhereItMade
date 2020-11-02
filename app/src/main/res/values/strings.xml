@@ -5,4 +5,7 @@
     <string name="where_it_made">Where it made ?</string>
     <string name="access_to_the_camera">access to the camera is needed for detection.</string>
     <string name="scan_barcode">Scan Barcode</string>
+    <string name="products_country_of_origin">Products country of origin:</string>
+    <string name="egypt">Egypt</string>
+    <string name="c_img_desc">country of origin</string>
 </resources>
