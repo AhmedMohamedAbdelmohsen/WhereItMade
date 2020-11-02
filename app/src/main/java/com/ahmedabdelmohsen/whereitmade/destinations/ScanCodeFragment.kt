@@ -1,8 +1,11 @@
 package com.ahmedabdelmohsen.whereitmade.destinations
 
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +15,17 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.ahmedabdelmohsen.whereitmade.R
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.zxing.Result
 import kotlinx.android.synthetic.main.fragment_scan_code.*
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 
+
 class ScanCodeFragment : Fragment(), ZXingScannerView.ResultHandler {
     private var view1: View? = null
+    private var vibrate: Vibrator? = null
+    private val accessLocation = 123
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,16 +38,26 @@ class ScanCodeFragment : Fragment(), ZXingScannerView.ResultHandler {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         this.view1 = view
+        //set vibrator
+        vibrate = activity?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
+        initializeMobileAds()  //Ads
         zxscan.setResultHandler(this)
         zxscan.startCamera()
         checkPermissions()
     }
 
-    private val accessLocation = 123
+    private fun initializeMobileAds() {
+        MobileAds.initialize(requireActivity()) {}
+        //Banner Ads
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
+    }
 
     // check if camera has permission or not to use
     private fun checkPermissions() {
-        if (Build.VERSION.SDK_INT >= 23) {
+        if (Build.VERSION.SDK_INT >= 21) {
             if (ActivityCompat.checkSelfPermission(
                     requireActivity(),
                     android.Manifest.permission.CAMERA
@@ -89,10 +107,14 @@ class ScanCodeFragment : Fragment(), ZXingScannerView.ResultHandler {
 
     //send result to the fragment of results
     override fun handleResult(rawResult: Result?) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrate?.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            vibrate?.vibrate(300)
+        }
         val bundle = bundleOf("amount" to rawResult.toString())
         view1!!.findNavController()
             .navigate(R.id.action_scanCodeFragment_to_scanResultFragment, bundle)
-        Toast.makeText(requireActivity(), "" + rawResult, Toast.LENGTH_SHORT).show()
     }
 }
 

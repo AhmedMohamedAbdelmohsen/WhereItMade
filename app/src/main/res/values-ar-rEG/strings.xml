@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">أين صُنعت؟</string>
+    <string name="egypt">مصر</string>
+    <string name="products_country_of_origin">بلد منشأ المنتجات:</string>
+    <string name="scan_barcode">مسح الباركود</string>
+    <string name="access_to_the_camera">الوصول إلى الكاميرا ضروري لاستخدام التطبيق.</string>
+    <string name="where_it_made">أين صُنعت؟</string>
+    <string name="c_img_desc">بلد المنشأ</string>
+    <string name="hello_blank_fragment">فارغ</string>
+</resources>

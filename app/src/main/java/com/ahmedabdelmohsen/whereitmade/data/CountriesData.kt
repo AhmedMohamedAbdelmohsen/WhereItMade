@@ -7,7 +7,7 @@ import com.ahmedabdelmohsen.whereitmade.R
 class CountriesData {
     private var countryFlag: ImageView? = null
     private var nameCountry: TextView? = null
-    private var barCode = 0
+    private var barCode = 10101010
 
     constructor(countryFlag: ImageView, nameCountry: TextView, barCode: Int) {
         this.countryFlag = countryFlag
@@ -387,7 +387,7 @@ class CountriesData {
         } else if (barCode in 978..979) {
             countryFlag?.setImageResource(0)
             nameCountry!!.text = "BOOKLAND"
-        } else {
+        } else if(barCode == 101010){
             countryFlag?.setImageResource(R.drawable.flag_default)
             nameCountry!!.text = "NOT FOUND"
         }
