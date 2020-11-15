@@ -1,4 +1,4 @@
-package com.ahmedabdelmohsen.whereitmade.destinations
+package com.ahmedabdelmohsen.whereitmadein.destinations
 
 import android.content.Context
 import android.content.pm.PackageManager
@@ -14,7 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.ahmedabdelmohsen.whereitmade.R
+import com.ahmedabdelmohsen.whereitmadein.R
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.zxing.Result

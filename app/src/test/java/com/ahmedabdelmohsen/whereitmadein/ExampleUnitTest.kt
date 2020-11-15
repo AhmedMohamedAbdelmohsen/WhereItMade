@@ -1,4 +1,4 @@
-package com.ahmedabdelmohsen.whereitmade
+package com.ahmedabdelmohsen.whereitmadein
 
 import org.junit.Test
 

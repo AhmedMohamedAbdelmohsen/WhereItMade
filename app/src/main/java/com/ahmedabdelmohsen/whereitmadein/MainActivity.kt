@@ -1,4 +1,4 @@
-package com.ahmedabdelmohsen.whereitmade
+package com.ahmedabdelmohsen.whereitmadein
 
 import android.os.Bundle
 import android.view.WindowManager

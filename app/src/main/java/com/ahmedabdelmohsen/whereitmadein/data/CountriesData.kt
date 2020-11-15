@@ -1,8 +1,8 @@
-package com.ahmedabdelmohsen.whereitmade.data
+package com.ahmedabdelmohsen.whereitmadein.data
 
 import android.widget.ImageView
 import android.widget.TextView
-import com.ahmedabdelmohsen.whereitmade.R
+import com.ahmedabdelmohsen.whereitmadein.R
 
 class CountriesData {
     private var countryFlag: ImageView? = null

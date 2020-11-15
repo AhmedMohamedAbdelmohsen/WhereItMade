@@ -1,4 +1,4 @@
-package com.ahmedabdelmohsen.whereitmade
+package com.ahmedabdelmohsen.whereitmadein
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ahmedabdelmohsen.whereitmade", appContext.packageName)
+        assertEquals("com.ahmedabdelmohsen.whereitmadein", appContext.packageName)
     }
 }
